@@ -1,0 +1,8 @@
+{
+    "allowed_roles": ["medico", "farmaceutico", "administrativo"],
+    "minimum_hardening_score": 70,
+    "allowed_hours": {
+        "start": 8,
+        "end": 18
+    }
+}
