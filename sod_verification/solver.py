@@ -1,5 +1,6 @@
 import pulp
 import csv
+import os
 
 # -------- DATOS --------
 ROLES_PERSONAS = {
@@ -20,6 +21,7 @@ TAREAS_ROLES = {
     "T4": ["DE", "PS"]
 }
 
+# -------- FUNCIONES --------
 def get_valid_personas(tarea):
     personas = set()
     for rol in TAREAS_ROLES[tarea]:
@@ -35,24 +37,29 @@ def resolver_instancia(exclusiones):
 
     model += 0, "Dummy Objective"
 
+    # Cada tarea debe ser asignada a un válido
     for tarea in tareas:
         validos = get_valid_personas(tarea)
         model += pulp.lpSum([variables[persona][tarea] for persona in validos]) == 1, f"Asignacion_unica_{tarea}"
 
+    # Separación de deberes
     for persona in personas:
         model += variables[persona]["T2.1"] + variables[persona]["T2.2"] <= 1, f"SoD_T2_1_T2_2_{persona}"
         model += variables[persona]["T3"] + variables[persona]["T4"] <= 1, f"SoD_T3_T4_{persona}"
 
+    # R4: JVG solo puede estar en T1
     if "JVG" in personas:
         model += variables["JVG"]["T2.1"] == 0
         model += variables["JVG"]["T2.2"] == 0
         model += variables["JVG"]["T3"] == 0
         model += variables["JVG"]["T4"] == 0
 
-    # Prohibir repeticiones exactas
+    # Exclusiones para evitar repeticiones, salvo HYV en T1 y PGR en T3
     for excl in exclusiones:
         persona = excl['persona']
         tarea = excl['tarea']
+        if (persona == "HYV" and tarea == "T1") or (persona == "PGR" and tarea == "T3"):
+            continue  # No excluimos
         model += variables[persona][tarea] == 0
 
     solver = pulp.PULP_CBC_CMD(msg=0)
@@ -72,16 +79,20 @@ if __name__ == "__main__":
     NUM_INSTANCIAS = 20
     exclusiones = []
 
+    output_dir = "sod_verification"
+    os.makedirs(output_dir, exist_ok=True)
+
     for i in range(NUM_INSTANCIAS):
         asignacion, status = resolver_instancia(exclusiones)
         if status != "Optimal":
-            print(f"Error al generar instancia {i+1}")
+            print(f"❌ Error al generar instancia {i+1}")
+            break
         else:
             instancias.append(asignacion)
             for tarea, persona in asignacion.items():
                 exclusiones.append({'persona': persona, 'tarea': tarea})
 
-    with open("sod_verification/instancias_bpmn.csv", mode="w", newline="") as file:
+    with open(os.path.join(output_dir, "instancias_bpmn.csv"), mode="w", newline="") as file:
         writer = csv.writer(file)
         writer.writerow(["Instancia", "T1", "T2.1", "T2.2", "T3", "T4"])
 
@@ -95,4 +106,4 @@ if __name__ == "__main__":
                 instancia.get("T4", "")
             ])
 
-    print("\n✔️ ¡Instancias generadas y guardadas en 'instancias_bpmn.csv' correctamente!")
+    print("\n✔️ ¡Instancias generadas y guardadas en 'sod_verification/instancias_bpmn.csv' correctamente!")
