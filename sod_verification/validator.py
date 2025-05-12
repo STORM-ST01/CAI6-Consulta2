@@ -49,7 +49,7 @@ def validar_instancias(instancias):
     return errores
 
 if __name__ == "__main__":
-    RUTA_FICHERO = "sod_verification/new_instancias_bpmn.csv"
+    RUTA_FICHERO = "sod_verification/distribucion.csv"
     instancias = cargar_instancias(RUTA_FICHERO)
     errores = validar_instancias(instancias)
 
