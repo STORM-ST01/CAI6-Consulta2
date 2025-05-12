@@ -1,6 +1,7 @@
 # client_znta/client.py
 
 import json
+import random
 import requests
 import os
 from cryptography.hazmat.primitives import hashes
