@@ -28,7 +28,18 @@ def log_access(context, result, reason):
     with open(LOG_FILE, mode="a", newline="") as file:
         writer = csv.writer(file)
         if not file_exists:
-            writer.writerow(["timestamp", "ip_address", "username", "role", "hardening_score", "result", "reason"])
+            writer.writerow([
+                "timestamp",
+                "ip_address",
+                "username",
+                "role",
+                "device_hardening_score",
+                "device_os",
+                "antivirus_active",
+                "system_patched",
+                "result",
+                "reason"
+            ])
         
         writer.writerow([
             datetime.utcnow().isoformat() + "Z",
@@ -36,9 +47,13 @@ def log_access(context, result, reason):
             context.get("username", "unknown"),
             context.get("role", "unknown"),
             context.get("device_hardening_score", "unknown"),
+            context.get("device_os", "unknown"),
+            context.get("antivirus_active", "unknown"),
+            context.get("system_patched", "unknown"),
             result,
             reason
         ])
+
 
 def load_public_key(certificate_path):
     with open(certificate_path, "rb") as cert_file:

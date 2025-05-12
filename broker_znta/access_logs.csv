@@ -1,0 +1,58 @@
+timestamp,ip_address,username,role,device_hardening_score,device_os,antivirus_active,system_patched,result,reason
+2025-05-12T10:04:15.686119Z,127.0.0.1,user1,administrativo,84,macOS Ventura,True,False,allowed,Acceso autorizado
+2025-05-12T10:04:15.698093Z,127.0.0.1,user2,administrativo,62,Ubuntu 22.04,False,True,denied,Contexto no autorizado
+2025-05-12T10:04:15.709102Z,127.0.0.1,user3,invitado,60,Kali Linux,True,True,denied,Contexto no autorizado
+2025-05-12T10:04:15.721844Z,127.0.0.1,user4,medico,59,Android,False,False,denied,Contexto no autorizado
+2025-05-12T10:04:15.747891Z,127.0.0.1,user5,invitado,87,macOS Ventura,True,True,denied,Contexto no autorizado
+2025-05-12T10:04:15.758865Z,127.0.0.1,user6,invitado,67,macOS Ventura,False,True,denied,Contexto no autorizado
+2025-05-12T10:04:15.786934Z,127.0.0.1,user7,administrativo,93,Kali Linux,True,False,allowed,Acceso autorizado
+2025-05-12T10:04:15.830195Z,127.0.0.1,user8,hacker,88,Windows 10,True,False,denied,Contexto no autorizado
+2025-05-12T10:04:15.858300Z,127.0.0.1,user9,medico,62,Windows 10,True,True,denied,Contexto no autorizado
+2025-05-12T10:04:15.868351Z,127.0.0.1,user10,invitado,66,Windows 10,False,True,denied,Contexto no autorizado
+2025-05-12T10:04:15.892360Z,127.0.0.1,user11,farmaceutico,55,Windows 10,True,False,denied,Contexto no autorizado
+2025-05-12T10:04:15.919435Z,127.0.0.1,user12,farmaceutico,89,Windows 10,True,True,allowed,Acceso autorizado
+2025-05-12T10:04:15.943638Z,127.0.0.1,user13,medico,63,Windows 10,True,True,denied,Contexto no autorizado
+2025-05-12T10:04:15.953645Z,127.0.0.1,user14,farmaceutico,79,Kali Linux,False,False,denied,Contexto no autorizado
+2025-05-12T10:04:15.965773Z,127.0.0.1,user15,administrativo,57,Android,False,True,denied,Contexto no autorizado
+2025-05-12T10:04:15.988768Z,127.0.0.1,user16,farmaceutico,79,Windows 10,True,False,allowed,Acceso autorizado
+2025-05-12T10:04:16.012799Z,127.0.0.1,user17,medico,92,Windows 10,True,False,denied,Contexto no autorizado
+2025-05-12T10:04:16.022310Z,127.0.0.1,user18,administrativo,52,Ubuntu 22.04,False,False,denied,Contexto no autorizado
+2025-05-12T10:04:16.048769Z,127.0.0.1,user19,hacker,57,Windows 10,True,False,denied,Contexto no autorizado
+2025-05-12T10:04:16.073291Z,127.0.0.1,user20,invitado,64,Ubuntu 22.04,True,True,denied,Contexto no autorizado
+2025-05-12T10:04:16.085687Z,127.0.0.1,user21,farmaceutico,69,macOS Ventura,False,True,denied,Contexto no autorizado
+2025-05-12T10:04:16.113720Z,127.0.0.1,user22,invitado,86,Windows 10,True,True,denied,Contexto no autorizado
+2025-05-12T10:04:16.141473Z,127.0.0.1,user23,administrativo,56,Android,True,False,denied,Contexto no autorizado
+2025-05-12T10:04:16.152473Z,127.0.0.1,user24,invitado,66,Android,False,False,denied,Contexto no autorizado
+2025-05-12T10:04:16.180200Z,127.0.0.1,user25,farmaceutico,82,Ubuntu 22.04,True,False,denied,Contexto no autorizado
+2025-05-12T10:04:16.192659Z,127.0.0.1,user26,hacker,57,Windows 10,False,True,denied,Contexto no autorizado
+2025-05-12T10:04:16.226232Z,127.0.0.1,user27,farmaceutico,56,Windows 10,True,True,denied,Contexto no autorizado
+2025-05-12T10:04:16.256261Z,127.0.0.1,user28,hacker,67,Kali Linux,True,False,denied,Contexto no autorizado
+2025-05-12T10:04:16.268693Z,127.0.0.1,user29,hacker,69,Ubuntu 22.04,True,True,denied,Contexto no autorizado
+2025-05-12T10:04:16.297379Z,127.0.0.1,user30,farmaceutico,74,Windows 10,True,True,allowed,Acceso autorizado
+2025-05-12T10:04:16.328939Z,127.0.0.1,user31,farmaceutico,62,Windows 10,True,True,denied,Contexto no autorizado
+2025-05-12T10:04:16.356007Z,127.0.0.1,user32,administrativo,94,macOS Ventura,True,False,denied,Contexto no autorizado
+2025-05-12T10:04:16.383053Z,127.0.0.1,user33,hacker,94,Kali Linux,True,False,denied,Contexto no autorizado
+2025-05-12T10:04:16.414139Z,127.0.0.1,user34,medico,66,Ubuntu 22.04,True,False,denied,Contexto no autorizado
+2025-05-12T10:04:16.439793Z,127.0.0.1,user35,invitado,88,Windows 10,True,True,denied,Contexto no autorizado
+2025-05-12T10:04:16.450842Z,127.0.0.1,user36,administrativo,81,Windows 10,False,True,denied,Contexto no autorizado
+2025-05-12T10:04:16.478797Z,127.0.0.1,user37,hacker,75,Windows 10,True,False,denied,Contexto no autorizado
+2025-05-12T10:04:16.522261Z,127.0.0.1,user38,farmaceutico,58,Android,True,False,denied,Contexto no autorizado
+2025-05-12T10:04:16.551652Z,127.0.0.1,user39,farmaceutico,73,Windows 10,True,True,denied,Contexto no autorizado
+2025-05-12T10:04:16.576982Z,127.0.0.1,user40,hacker,60,Windows 10,True,True,denied,Contexto no autorizado
+2025-05-12T10:04:16.588991Z,127.0.0.1,user41,administrativo,55,Windows 10,True,True,denied,Contexto no autorizado
+2025-05-12T10:04:16.615861Z,127.0.0.1,user42,invitado,50,Kali Linux,True,False,denied,Contexto no autorizado
+2025-05-12T10:04:16.644519Z,127.0.0.1,user43,invitado,95,Kali Linux,True,False,denied,Contexto no autorizado
+2025-05-12T10:04:16.672995Z,127.0.0.1,user44,administrativo,57,Kali Linux,True,True,denied,Contexto no autorizado
+2025-05-12T10:04:16.682998Z,127.0.0.1,user45,administrativo,78,Windows 10,False,False,denied,Contexto no autorizado
+2025-05-12T10:04:16.694995Z,127.0.0.1,user46,farmaceutico,77,Windows 10,True,False,denied,Contexto no autorizado
+2025-05-12T10:04:16.706012Z,127.0.0.1,user47,hacker,75,Windows 10,False,False,denied,Contexto no autorizado
+2025-05-12T10:04:16.731444Z,127.0.0.1,user48,administrativo,57,Android,True,True,denied,Contexto no autorizado
+2025-05-12T10:04:16.762480Z,127.0.0.1,user49,administrativo,73,Windows 10,True,False,denied,Contexto no autorizado
+2025-05-12T10:04:16.775484Z,127.0.0.1,user50,administrativo,75,macOS Ventura,True,True,denied,Contexto no autorizado
+2025-05-12T10:08:49.689012Z,10.100.138.35,ramon,medico,90,Windows 10,True,False,allowed,Acceso autorizado
+2025-05-12T10:10:18.017389Z,10.100.138.35,ramon,medico,85,Windows 10,True,True,allowed,Acceso autorizado
+2025-05-12T10:10:36.094956Z,10.100.138.35,ramon,medico,81,Windows 10,True,True,allowed,Acceso autorizado
+2025-05-12T10:10:49.905993Z,10.100.138.35,ramon,medico,76,Windows 10,True,True,allowed,Acceso autorizado
+2025-05-12T10:10:57.857450Z,10.100.138.35,ramon,medico,88,Windows 10,True,True,allowed,Acceso autorizado
+2025-05-12T10:11:04.859073Z,10.100.138.35,ramon,medico,89,Windows 10,True,True,allowed,Acceso autorizado
+2025-05-12T10:11:09.178074Z,10.100.138.35,ramon,medico,87,Windows 10,True,True,allowed,Acceso autorizado
